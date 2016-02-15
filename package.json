@@ -1,0 +1,42 @@
+{
+  "name": "vigour-player",
+  "description": "vigour player",
+  "version": "0.1.1",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vigour-io/player.git"
+  },
+  "author": "vigour.io <dev@vigour.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vigour-io/player/issues"
+  },
+  "dependencies": {
+    "vigour-element": "vigour-io/element#feature/virtual-dom",
+    "vigour-js": "0.5.3",
+    "vigour-config": "0.0.12"
+  },
+  "homepage": "https://github.com/vigour-io/player",
+  "keywords": [
+    "vigour-js",
+    "vigour-element",
+    "player",
+    "DOM"
+  ],
+  "contributors": [
+    "Youri Daamen <youri@vigour.io>",
+    "Jim de Beer <jim@vigour.io>",
+    "Nika Tomadze <nika@vigour.io>"
+  ],
+  "standard": {
+    "globals": [
+      "describe",
+      "it",
+      "beforeEach",
+      "sinon",
+      "expect",
+      "xit"
+    ]
+  }
+}
