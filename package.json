@@ -13,7 +13,7 @@
     "url": "https://github.com/vigour-io/player/issues"
   },
   "dependencies": {
-    "vigour-element": "vigour-io/element#feature/virtual-dom",
+    "vigour-element": "vigour-io/element",
     "vigour-js": "0.5.3",
     "screenfull": "3.0.0"
   },
