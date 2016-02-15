@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "vigour-element": "vigour-io/element#feature/virtual-dom",
-    "vigour-js": "0.5.3"
+    "vigour-js": "0.5.3",
+    "screenfull": "3.0.0"
   },
   "homepage": "https://github.com/vigour-io/player",
   "keywords": [
