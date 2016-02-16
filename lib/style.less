@@ -37,6 +37,22 @@
   width: 100%;
 }
 
+.playerLoading {
+  .vigour-player-container {
+    .type-icon.play {
+      @media all @under-tablet {
+        display: none;
+      }
+    }
+  }
+}
+
+.playerFullscreen {
+  .vigour-player-container {
+    z-index: 1;
+  }
+}
+
 // temp
 .vigour-player-container > .overlay {
   .absolute(0, 0);
@@ -54,6 +70,7 @@
   }
 
   > .loading {
+    margin-top: -@gutter;
     position: absolute;
   }
 
@@ -88,7 +105,7 @@
     .flex-wrap(nowrap);
     .align-items(center);
     .transition(~".4s ease opacity, .4s ease visibility");
-    // opacity: 0;
+    opacity: 0;
     // visibility: hidden;
 
     // TODO: need solution for phone
@@ -97,7 +114,6 @@
     }
 
     .type-icon.play {
-      // TODO: temporarily hide
       @media all @under-tablet {
         .ui-position-center;
         margin-top: -@gutter;
@@ -167,3 +183,5 @@
     }
   }
 }
+
+
