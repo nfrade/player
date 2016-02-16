@@ -37,7 +37,7 @@
   width: 100%;
 }
 
-.playerLoading {
+.playerLoading:not(.playerNoDuration) {
   .vigour-player-container {
     .type-icon.play {
       @media all @under-tablet {
@@ -53,6 +53,17 @@
   }
 }
 
+body:not(.playerPlaying) {
+  .vigour-player-container > .overlay > .controls {
+    opacity: 1 !important;
+  }
+}
+
+.playerNoDuration .vigour-player-container > .overlay {
+  .time, .duration, .progress, .loading {
+     display: none !important;
+  }
+}
 // temp
 .vigour-player-container > .overlay {
   .absolute(0, 0);
