@@ -79,7 +79,7 @@
 
   > .controls {
     color: white;
-    background: fade(@secondary, 25%);
+    background: fade(@body-background, 25%);
     height: 54px;
     bottom: 0;
     left: 0;
@@ -96,7 +96,7 @@
       .transition-delay(.1s);
     }
 
-    .play {
+    .type-icon.play {
       // TODO: temporarily hide
       @media all @under-tablet {
         .ui-position-center;
@@ -114,17 +114,22 @@
       text-align: center;
       .size(60px);
       cursor: pointer;
-
+      font-size: @h2;
       &:before {
         line-height: 60px;
       }
     }
 
-    > .time,
-    > .duration {
+    > .time {
       text-align: center;
       line-height: 1;
       width: 6rem;
+    }
+
+    > .duration {
+      text-align: right;
+      line-height: 1;
+      width: 5rem;
     }
 
     > .progress {
