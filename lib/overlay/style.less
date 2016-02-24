@@ -23,6 +23,7 @@
 .vigour-player-container > .overlay > .loading {
   margin-top: -@gutter;
   position: absolute;
+  display: none;
 }
 
 .vigour-player-container > .overlay > .adMessage {
@@ -139,9 +140,14 @@
   display: none;
 }
 
-.playerLoading:not(.playerNoDuration) .vigour-player-container .type-icon.play {
-  @media all @under-tablet {
-    display: none;
+.playerLoading {
+  &:not(.playerNoDuration) .vigour-player-container .type-icon.play {
+    @media all @under-tablet {
+      display: none;
+    }
+  }
+  .vigour-player-container .loader {
+    display: block;
   }
 }
 
