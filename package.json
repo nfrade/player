@@ -1,4 +1,4 @@
-{
+git {
   "name": "vigour-player",
   "description": "vigour player",
   "version": "0.1.1",
@@ -13,30 +13,17 @@
     "url": "https://github.com/vigour-io/player/issues"
   },
   "dependencies": {
-    "vigour-element": "vigour-io/element#feature/refactor",
-    "vigour-js": "0.5.3",
+    "vigour-element": "1.0.0",
+    "vigour-observable": "1.0.3",
     "screenfull": "3.0.0"
   },
   "homepage": "https://github.com/vigour-io/player",
   "keywords": [
-    "vigour-js",
     "vigour-element",
     "player",
     "DOM"
   ],
   "contributors": [
-    "Youri Daamen <youri@vigour.io>",
-    "Jim de Beer <jim@vigour.io>",
-    "Nika Tomadze <nika@vigour.io>"
-  ],
-  "standard": {
-    "globals": [
-      "describe",
-      "it",
-      "beforeEach",
-      "sinon",
-      "expect",
-      "xit"
-    ]
-  }
+    "Youri Daamen <youri@vigour.io>"
+  ]
 }
