@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "screenfull": "3.0.0",
-    "vigour-package": "^0.0.2"
+    "vigour-package": "^1.0.0"
   },
   "homepage": "https://github.com/vigour-io/player",
   "keywords": [
