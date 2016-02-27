@@ -77,9 +77,8 @@
   }
 
   .type-icon {
-    margin-top: 4px;
     text-align: center;
-    .size(64px);
+    padding: 15px;
     cursor: pointer;
     font-size: 3rem;
     &:before {
@@ -88,20 +87,20 @@
   }
 
   > .time {
-    margin-top: 4px;
+    margin-left: 5px;
+    margin-top: 3px;
     font-size: @h7;
     text-align: right;
     line-height: 1;
-    width: 4rem;
   }
 
   > .duration {
-    margin-top: 4px;
+    margin-right: 15px;
+    margin-top: 3px;
     opacity: 0.6;
     font-size: @h7;
     text-align: left;
     line-height: 1;
-    width: 4rem;
   }
 
   > .progress {
@@ -148,7 +147,7 @@
       > div {
         position: relative;
         width: 2px;
-        margin: 12px 3px;
+        margin: 14px 3px;
         > div {
           .absolute (0,0,0,0);
           &.inactive {
