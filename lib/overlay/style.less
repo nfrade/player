@@ -63,11 +63,14 @@
     .transition-delay(.1s);
   }
 
-  .type-icon.play {
-    @media all @under-tablet {
+  @media all @under-tablet {
+    .type-icon.play {
       .ui-position-center;
       margin-top: -@gutter;
       font-size: @h0;
+    }
+    .time {
+      margin-left: 15px;
     }
   }
 
@@ -87,7 +90,6 @@
   }
 
   > .time {
-    margin-left: 5px;
     margin-top: 3px;
     font-size: @h7;
     text-align: right;
@@ -95,7 +97,6 @@
   }
 
   > .duration {
-    margin-right: 15px;
     margin-top: 3px;
     opacity: 0.6;
     font-size: @h7;
@@ -138,6 +139,7 @@
   }
 
   > .volume {
+    margin-left: 15px;
     height: 100%;
     width: 4rem;
     .container {
