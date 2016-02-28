@@ -55,8 +55,17 @@
   .flex-wrap(nowrap);
   .align-items(center);
   .transition(~".4s ease opacity, .4s ease visibility");
-  // opacity: 0;
+  opacity: 0;
   // visibility: hidden;
+
+  &.channel-controls {
+    > .time,
+    > .duration,
+    > .play,
+    > .progress {
+      visibility: hidden;
+    }
+  }
 
   // TODO: need solution for phone
   @media all @under-tablet {
@@ -74,10 +83,11 @@
     }
   }
 
-  > .buttons {
-    .flex-display;
-    .flex-wrap(nowrap);
-  }
+  // can be removed?
+  // > .buttons {
+  //   .flex-display;
+  //   .flex-wrap(nowrap);
+  // }
 
   .type-icon {
     text-align: center;
