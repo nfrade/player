@@ -2,7 +2,7 @@
   "name": "vigour-player",
   "description": "vigour player",
   "version": "1.2.11",
-  "main": "lib/index.js",
+  "main": "lib/index.js",  
   "repository": {
     "type": "git",
     "url": "https://github.com/vigour-io/player.git"
