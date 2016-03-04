@@ -42,6 +42,26 @@
   top: 15px;
 }
 
+.vigour-player-container > .channel-overlay {
+  > .interaction {
+    pointer-events: none;
+  }
+  > .controls {
+    > .time,
+    > .duration,
+    > .play,
+    > .progress {
+      visibility: hidden;
+    }
+  }
+}
+
+.vigour-player-container > .overlay > .interaction {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 54px);
+}
+
 .vigour-player-container > .overlay > .interaction {
   position: relative;
   width: 100%;
@@ -62,15 +82,6 @@
   opacity: 0;
   // visibility: hidden;
 
-  &.channel-controls {
-    > .time,
-    > .duration,
-    > .play,
-    > .progress {
-      visibility: hidden;
-    }
-  }
-
   // TODO: need solution for phone
   @media all @under-tablet {
     .transition-delay(.1s);
@@ -86,13 +97,7 @@
       margin-left: 15px;
     }
   }
-
-  // can be removed?
-  // > .buttons {
-  //   .flex-display;
-  //   .flex-wrap(nowrap);
-  // }
-
+  
   .type-icon {
     text-align: center;
     padding: 15px;
