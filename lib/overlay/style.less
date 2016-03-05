@@ -42,11 +42,14 @@
   > .controls {
     > .time,
     > .duration,
-    > .play,
     > .progress {
       visibility: hidden;
     }
   }
+}
+
+.playerPlaying .vigour-player-container > .channel-overlay > .controls > .play {
+  visibility: hidden;  
 }
 
 .vigour-player-container > .overlay > .interaction {
@@ -192,8 +195,10 @@
 }
 
 
-.ios:not(.native) .vigour-player-container > .overlay {
-  display: none;
+.ios:not(.native) .vigour-player-container > .overlay > .controls {
+  > *:not(.play) {
+    visibility: hidden;
+  }
 }
 
 .playerLoading {
@@ -217,9 +222,4 @@ body:not(.playerPlaying) .vigour-player-container > .overlay {
   > .controls {
     opacity: 1 !important;
   }
-}
-
-.phone.playerFullscreen video {
-  // Don't touch this Danillo, Nika and Rick!
-  height: 100% !important;
 }
