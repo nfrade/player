@@ -195,9 +195,15 @@
 }
 
 
-.ios:not(.native) .vigour-player-container > .overlay > .controls {
+.phone.ios:not(.native) .vigour-player-container > .overlay > .controls {
   > *:not(.play) {
     visibility: hidden;
+  }
+}
+
+.tablet.ios .vigour-player-container > .overlay > .controls {
+  > .exit {
+    display: none;
   }
 }
 
