@@ -12,6 +12,9 @@
   "bugs": {
     "url": "https://github.com/vigour-io/player/issues"
   },
+  "scripts":{
+    "dev": "beefy ./test/index.js --live -- --ignore=vigour-package -t lessify"
+  },
   "dependencies": {
     "screenfull": "3.0.0",
     "vigour-open": "^1.0.0",
