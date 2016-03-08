@@ -1,3 +1,5 @@
+@import "~vigour-scratch/index.less";
+
 .vigour-player-container {
   .user-select;
 }
@@ -67,6 +69,7 @@
 .vigour-player-container > .overlay > .controls {
   color: white;
   background: fade(@body-background, 25%);
+  position: absolute;
   height: 54px;
   bottom: 0;
   left: 0;
@@ -201,14 +204,14 @@
   }
 }
 
-.tablet.ios .vigour-player-container > .overlay > .controls {
-  > .duration {
-    margin-right: 15px;
-  }
-  > .exit {
-    display: none;
-  }
-}
+// .tablet.ios .vigour-player-container > .overlay > .controls {
+//   > .duration {
+//     margin-right: 15px;
+//   }
+//   > .exit {
+//     display: none;
+//   }
+// }
 
 .playerLoading {
   &:not(.playerNoDuration) .vigour-player-container .type-icon.play {
