@@ -13,7 +13,7 @@
     "url": "https://github.com/vigour-io/player/issues"
   },
   "scripts":{
-    "dev": "beefy ./test/index.js --live -- --ignore=vigour-package -t lessify"
+    "dev": "vpack ./test/index.js --package -p 8080 -o --no-info"
   },
   "dependencies": {
     "screenfull": "3.0.0",
