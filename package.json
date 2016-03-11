@@ -16,6 +16,7 @@
     "dev": "vpack ./test/index.js --package -p 8080 -o --template template.html --no-info"
   },
   "dependencies": {
+    "lodash.isarray": "^4.0.0",
     "screenfull": "3.0.0",
     "vast-client": "^1.3.7",
     "vigour-open": "^1.0.0",
