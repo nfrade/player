@@ -31,7 +31,7 @@ var app = e({
       },
       apiKey: '9ed67940-5265-468d-98f5-f4638258d3c5'
     }
-  }, player, require('../lib/bitdash'), require('../lib/vast')]),
+  }, player, require('../lib/bitdash'), require('../lib/ad/vast')]),
   title: {
     text: {
       val: 'VIDEO PLAYING',
