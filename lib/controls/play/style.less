@@ -1,0 +1,14 @@
+@import "~vigour-scratch/index.less";
+
+.vigour-player .play {
+  @media all @under-tablet {
+    .ui-position-center;
+    margin-top: -@gutter;
+    font-size: @h0;
+  }
+}
+
+// **TEMP** hide play button when channel is playing
+.vigour-player.channel .icon-pause-o {
+  visibility: hidden;
+}
