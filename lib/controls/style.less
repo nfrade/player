@@ -1,6 +1,8 @@
 @import "~vigour-scratch/index.less";
 
-.vigour-player .controls {
+.vigour-player > .controls {
+  transform: translateZ(0);
+  z-index: 6;
   color: white;
   background: fade(@body-background, 25%);
   position: absolute;
@@ -19,12 +21,12 @@
   }
 }
 
-.vigour-player .controls.hidden {
-  visibility: none;
+.vigour-player > .controls.hidden {
+  visibility: hidden;
   opacity:0;
 }
 
-.vigour-player .controls .type-icon {
+.vigour-player > .controls .type-icon {
   text-align: center;
   padding: 15px;
   cursor: pointer;
@@ -35,11 +37,12 @@
 }
 
 // hide all controls except play button on ios safari
-.phone.ios.web .vigour-player .controls > *:not(.play) {
+.phone.ios.web .vigour-player > .controls > *:not(.play) {
   visibility: hidden;
 }
 
 // if not playing always show controls
-body:not(.playerPlaying) .vigour-player .controls {
-  opacity: 1 !important;
+body:not(.playerPlaying) .vigour-player > .controls {
+  visibility: visible;
+  opacity: 1;
 }
