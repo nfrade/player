@@ -37,8 +37,11 @@
 }
 
 // hide all controls except play button on ios safari
-.phone.ios.web .vigour-player > .controls > *:not(.play) {
-  visibility: hidden;
+.phone.ios.web .vigour-player > .controls {
+  background: none;
+  > *:not(.play) {
+    visibility: hidden;
+  }
 }
 
 // if not playing always show controls
