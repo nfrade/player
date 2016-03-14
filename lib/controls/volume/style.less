@@ -10,20 +10,10 @@
     .flex-display;
     .flex-direction(row);
 
-    &:hover > div > div,
-    &:hover > div > div.inactive {
-      background-color: @tertiary;
-    }
-
     > div {
       position: relative;
       width: 2px;
       padding: 14px 3px;
-
-      &:hover ~ div > div,
-      &:hover ~ div > div.inactive {
-        background-color: rgba(255, 255, 255, 0.5);
-      }
 
       > div {
         .absolute(0,0,0,0);
