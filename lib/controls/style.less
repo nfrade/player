@@ -47,7 +47,11 @@ body:not(.playerPlaying) .vigour-player > .controls {
   opacity: 1;
 }
 
-
+// hide cursor when playing on fullscreen
 .playerPlaying.playerFullscreen:not(.playerInteraction) .vigour-player {
   cursor: none;
+}
+
+.vigour-player.locked > .controls {
+  display: none;
 }
