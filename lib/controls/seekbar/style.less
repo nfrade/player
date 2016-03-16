@@ -8,10 +8,9 @@
   margin: 0 10px;
   cursor: pointer;
   height: 100%;
-
   > .seek {
     width: 100%;
-    border-radius: 2px;
+    border-radius: 3px;
     background-color: rgba(255, 255, 255, 0.5);
 
     > .bar {
@@ -39,9 +38,12 @@
   visibility: hidden;
 }
 
-.playerAd .vigour-player .seekbar {
-  pointer-events: none;
+.desktop .vigour-player .seekbar:hover {
   > .seek > .bar > .button {
-    display: none;
+    .transition(~".4s all");
+    .size(16px);
+    -webkit-transform: translate3d(3px,-3px,0);
+    transform: translate3d(3px,-3px,0);
+    border-radius: 8px;
   }
 }
