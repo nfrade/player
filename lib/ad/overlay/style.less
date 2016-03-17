@@ -1,0 +1,49 @@
+@import "~vigour-scratch/index.less";
+
+.vigour-player .advertisement .seekbar {
+  pointer-events: none;
+  > .seek > .bar > .button {
+    display: none;
+  }
+}
+
+.vigour-player .adText {
+  cursor: pointer;
+  position: absolute;
+  font-size:16px;
+  left:15px;
+  top:0;
+  top:-35px;
+  border-bottom:1px solid white;
+}
+
+.vigour-player .skip {
+  @media all @under-tablet {
+    height: 45px;
+    top:0;
+    bottom:auto;
+  }
+
+  background: fade(@body-background, 25%);
+  position: absolute;
+  bottom: 90px;
+  height: 90px;
+  right: 0;
+  .flex-display;
+  .flex-direction(row);
+  .align-items(center);
+  > .title {
+    font-size: 16px;
+    color: white;
+    padding: 15px;
+  }
+  &.clickable {
+    cursor: pointer;
+    > .thumb {
+      display: none;
+    }
+    > .title {
+      font-size: 24px;
+    }
+  }
+}

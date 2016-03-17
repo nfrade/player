@@ -1,10 +1,11 @@
 @import "~vigour-scratch/index.less";
 
-.vigour-player > .controls {
-  transform: translateZ(0);
+.vigour-player > .type-controls {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   z-index: 6;
   color: white;
-  background: fade(@body-background, 25%);
+  .gradient (fade(@body-background, 0%), fade(@body-background, 25%));
   position: absolute;
   height: 54px;
   bottom: 0;
@@ -13,7 +14,8 @@
   .flex-display;
   .flex-wrap(nowrap);
   .align-items(center);
-  .transition(~".4s ease opacity, .4s ease visibility");
+  .transition(~".4s ease all");
+  // .transition(~".4s ease opacity, .4s ease visibility");
 
   // TODO: need solution for phone
   @media all @under-tablet {
@@ -21,12 +23,15 @@
   }
 }
 
-.vigour-player > .controls.hidden {
-  visibility: hidden;
-  opacity:0;
+.vigour-player > .type-controls.hidden {
+  -webkit-transform: translate3d(0,54px,0);
+  transform: translate3d(0,54px,0);
+  // visibility: hidden;
+  // opacity:0;
+
 }
 
-.vigour-player > .controls .type-icon {
+.vigour-player > .type-controls .type-icon {
   text-align: center;
   padding: 15px;
   cursor: pointer;
@@ -37,7 +42,7 @@
 }
 
 // hide all controls except play button on ios safari
-.phone.ios.web .vigour-player > .controls {
+.phone.ios.web .vigour-player > .type-controls {
   background: none;
   > *:not(.play) {
     visibility: hidden;
@@ -45,7 +50,7 @@
 }
 
 // if not playing always show controls
-body:not(.playerPlaying) .vigour-player > .controls {
+body:not(.playerPlaying) .vigour-player > .type-controls {
   visibility: visible;
   opacity: 1;
 }
@@ -55,6 +60,6 @@ body:not(.playerPlaying) .vigour-player > .controls {
   cursor: none;
 }
 
-.vigour-player.locked > .controls {
+.vigour-player.locked > .type-controls {
   display: none;
 }
