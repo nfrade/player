@@ -1,9 +1,6 @@
 @import "~vigour-scratch/index.less";
 
 .vigour-player .seekbar {
-  &:active > .seek > .bar {
-    .transition(none);
-  }
   .flex(1);
   .flex-display;
   .flex-wrap(nowrap);
@@ -17,7 +14,6 @@
     background-color: rgba(255, 255, 255, 0.5);
 
     > .bar {
-      .transition(~".6s width linear");
       position: relative;
       background-color: @tertiary;
       height: 6px;
@@ -49,5 +45,14 @@
     -webkit-transform: translate3d(3px,-3px,0);
     transform: translate3d(3px,-3px,0);
     border-radius: 8px;
+  }
+}
+
+.playerReady .vigour-player .seekbar {
+  &:active > .seek > .bar {
+    .transition(none);
+  }
+  > .seek > .bar {
+    .transition(~".6s width linear");
   }
 }
