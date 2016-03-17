@@ -3,6 +3,7 @@
 An player wrapper for usage with [vigour-element](https://github.com/vigour-io/element).
 
 ## how to use
+`npm i --save vigour-player`
 
 Add the player to your app as a component and add your configuration.
 
