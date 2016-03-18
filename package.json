@@ -13,6 +13,7 @@
     "url": "https://github.com/vigour-io/player/issues"
   },
   "scripts": {
+    "start": "npm run dev",
     "dev": "vpack ./test/index.js --package -p 8080 -o --template template.html --no-info"
   },
   "dependencies": {
