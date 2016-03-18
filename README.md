@@ -1,5 +1,8 @@
 # player
 
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![npm version](https://badge.fury.io/js/vigour-player.svg)](https://badge.fury.io/js/vigour-player)
+
 An player wrapper for usage with [vigour-element](https://github.com/vigour-io/element).
 
 ## how to use
