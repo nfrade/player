@@ -1,12 +1,6 @@
 @import (reference) "~vigour-scratch/index.less";
 
 body:not(.playerFullscreen) .vigour-player {
-  > .type-controls.hidden .play {
-    @media all @under-tablet {
-      visibility: hidden;
-      opacity: 0;
-    }
-  }
   .play {
     @media all @under-tablet {
       .transition(~".4s ease opacity, .4s ease visibility");
@@ -20,6 +14,13 @@ body:not(.playerFullscreen) .vigour-player {
       left: 50vw;
       font-size: @h0;
     }
+  }
+}
+
+.playerPlaying:not(.playerFullscreen) .vigour-player> .type-controls.hidden .play {
+  @media all @under-tablet {
+    visibility: hidden;
+    opacity: 0;
   }
 }
 

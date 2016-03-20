@@ -23,12 +23,9 @@
   }
 }
 
-.vigour-player > .type-controls.hidden {
+.playerPlaying .vigour-player > .type-controls.hidden {
   -webkit-transform: translate3d(0,54px,0);
   transform: translate3d(0,54px,0);
-  // visibility: hidden;
-  // opacity:0;
-
 }
 
 .vigour-player > .type-controls .type-icon {
@@ -47,12 +44,6 @@
   > *:not(.play) {
     visibility: hidden;
   }
-}
-
-// if not playing always show controls
-body:not(.playerPlaying) .vigour-player > .type-controls {
-  visibility: visible;
-  opacity: 1;
 }
 
 // hide cursor when playing on fullscreen
