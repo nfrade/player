@@ -50,7 +50,7 @@ var app = global.app = e({
   // order is important ==> add to docs!
   , require('../lib/bitdash')
   , require('../lib/controls')
-  , require('../lib/ad/vast')
+  // , require('../lib/ad/vast')
   ]),
   title: {
     text: {
