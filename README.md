@@ -4,7 +4,7 @@
 [![npm version](https://badge.fury.io/js/vigour-player.svg)](https://badge.fury.io/js/vigour-player)
 [![Build Status](https://travis-ci.org/vigour-io/player.svg?branch=master)](https://travis-ci.org/vigour-io/player)
 
-An player wrapper for usage with [vigour-element](https://github.com/vigour-io/element).
+A player wrapper for usage with [vigour-element](https://github.com/vigour-io/element).
 
 ## how to use
 `npm i --save vigour-player`
