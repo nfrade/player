@@ -48,9 +48,10 @@ var app = global.app = e({
     }
   }, player
   // order is important ==> add to docs!
-  , require('../lib/bitdash')
-  , require('../lib/controls')
-  , require('../lib/ad/vast')
+  // , require('../lib/bitdash')
+  , require('../lib/videojs')
+  // , require('../lib/controls')
+  // , require('../lib/ad/vast')
   ]),
   title: {
     text: {
