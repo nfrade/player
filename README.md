@@ -2,6 +2,7 @@
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![npm version](https://badge.fury.io/js/vigour-player.svg)](https://badge.fury.io/js/vigour-player)
+[![Build Status](https://travis-ci.org/vigour-io/modal.svg?branch=master)](https://travis-ci.org/vigour-io/modal)
 
 An player wrapper for usage with [vigour-element](https://github.com/vigour-io/element).
 
