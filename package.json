@@ -14,7 +14,16 @@
   },
   "scripts": {
     "start": "npm run dev",
-    "dev": "vpack ./test/index.js --package -p 8080 -o --template template.html --no-info"
+    "beefy": "beefy ./test/index.js --live -- --ignore=vigour-package",
+    "dev": "vpack ./test/index.js --package -p 8080 -o --template template.html --no-info",
+    "test": "node test"
+  },
+  "browserify": {
+    "transform": [ "./transform.js", "lessify" ]
+  },
+  "browser": {
+    "./lib/property/fullscreen/index.js":"./lib/property/fullscreen/browser.js",
+    "./lib/ad/adblock/index.js":"./lib/ad/adblock/browser.js"
   },
   "dependencies": {
     "blockadblock": "^3.2.1",
@@ -32,8 +41,11 @@
     "xmldom": "^0.1.22"
   },
   "devDependencies": {
+    "browserify": "^13.0.0",
+    "lessify": "^1.0.1",
     "nightmare": "^2.2.0",
-    "tape": "^4.4.0",
+    "tap-difflet": "0.4.0",
+    "tape": "^4.5.1",
     "vdom-to-html": "^2.2.0",
     "vigour-util": "^1.0.1"
   },
