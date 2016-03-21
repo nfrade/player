@@ -70,7 +70,3 @@ var app = global.app = e({
 })
 
 app.val = bunny
-
-setInterval(function () {
-  console.log(3)
-},1000)
