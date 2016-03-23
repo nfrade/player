@@ -1,0 +1,15 @@
+@import (reference) "~vigour-scratch/index.less";
+.vigour-player .progress {
+  margin-top: 3px;
+  font-size: @h7;
+  text-align: right;
+  line-height: 1;
+
+  @media all @under-tablet {
+    margin-left: 15px;
+  }
+}
+
+.vigour-player.channel .progress {
+  visibility: hidden;
+}

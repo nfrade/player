@@ -1,41 +1,13 @@
 'use strict'
-// var ua = require('vigour-ua/navigator')
-// ua.webview = true
-
-var DOM = require('vigour-util/is/node') ? {} : document.body
+var isNode = require('vigour-util/is/node')
+var DOM = isNode ? {} : document.body
+if (isNode) {
+  require('vigour-element/lib/util/require')
+}
 var e = require('vigour-element/e')
 var player = require('../lib')
-
 // var toHTML = require('vdom-to-html')
 // var test = require('tape')
-
-var app = e({
-  DOM: DOM,
-  player: e([{
-    components: {
-      loader: { text: 'LOADING!' },
-      icon: { text () { return this.parent.key } }
-    },
-    config: {
-      ads: {
-        0: [
-          'http://techslides.com/demos/sample-videos/small.mp4'
-        ],
-        10: [
-          'http://techslides.com/demos/sample-videos/small.mp4',
-          'https://cstatic.weborama.fr/advertiser/701/13/73/149/640x360_EtapesVie_SBS_NLBE.mp4'
-        ]
-      },
-      apiKey: '9ed67940-5265-468d-98f5-f4638258d3c5'
-    }
-  }, player, require('../lib/bitdash'), require('../lib/vast')]),
-  title: {
-    text: {
-      val: 'VIDEO PLAYING',
-      $playerAd: 'AD PLAYING'
-    }
-  }
-})
 
 var Observable = require('vigour-observable')
 
@@ -44,28 +16,61 @@ var Data = new Observable({
   Child: 'Constructor'
 }).Constructor
 
-var data = new Data({
-  one: {
-    video: 'http://akamaivod.tv.ae/5a5ea/LYX00000004_3860_(3860_ISMUSP).ism/LYX00000004_3860_(3860_ISMUSP).{type}',
-    progress: 0,
-    duration: 1000
+var bunny = new Data({
+  key: 'bunny-video-data',
+  img: 'https://www.filmfestival.nl/FionaAssets/000001/00000136/scaled/13667.jpg',
+  video: 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4'
+})
+
+var lego = new Data({
+  key: 'lego-video-data',
+  video: 'http://techslides.com/demos/sample-videos/small.mp4'
+})
+
+var app = global.app = e({
+  DOM: DOM,
+  player: e([{
+    components: {
+      loader: { text: 'LOADING!' },
+      icon: { text () { return this.parent.key.slice(0, 2) } }
+    },
+    config: {
+    //   ads: {
+    //     '0': [
+    //       // 'http://ads.adhese.be/ad3ad/sl_vier.be_-midroll/rn5707/pr1/re0068007400740070003a002f002f003100390032002e003100360038002e0031002e00320037003a0038003000380036002f003f002400690064003d006d00610063002d006400650073006b0074006f0070002d006300680072006f006d0065002d0038003800300026002400660069006c0065003d002f006500780061006d0070006c0065002f006100640073002f00620061006e006e006500720073002f006100640068006500730065002e006a0073002600240061006300740069006f006e003d006400650076/ur0068007400740070003a002f002f003100390032002e003100360038002e0031002e00320037003a0038003000380036002f003f002400690064003d006d00610063002d006400650073006b0074006f0070002d006300680072006f006d0065002d0038003800300026002400660069006c0065003d002f006500780061006d0070006c0065002f006100640073002f00620061006e006e006500720073002f006100640068006500730065002e006a0073002600240061006300740069006f006e003d006400650076/brChrome;Chrome47;OSX;desktop/dtdesktop/inrbcn;prx/?t=' + new Date().getTime()
+    //       'https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=%2F32573358%2F2nd_test_ad_unit&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=http%3A%2F%2Freleasetest.dash-player.com%2Fads%2F&description_url=[description_url]&correlator=' + Math.floor(Date.now() + Math.random() * 10000)
+    //     ],
+    //     '0.1': [
+    //       'https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=%2F32573358%2F2nd_test_ad_unit&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=http%3A%2F%2Freleasetest.dash-player.com%2Fads%2F&description_url=[description_url]&correlator=' + Math.floor(Date.now() + Math.random() * 10000)
+    //     ]
+    //   },
+      apiKey: '9ed67940-5265-468d-98f5-f4638258d3c5'
+    }
   },
-  two: {
-    progress: 0,
-    duration: 1000,
-    video: 'https://cstatic.weborama.fr/advertiser/701/13/73/149/640x360_EtapesVie_SBS_NLBE.mp4'
+  player,
+  require('../lib/bitdash'),
+  require('../lib/controls'),
+  // require('../lib/ad/vast')
+  ]),
+  title: {
+    text: {
+      val: 'VIDEO PLAYING',
+      $playerAd: 'AD PLAYING'
+    }
+  },
+  button: {
+    type: 'button',
+    text: 'switch src',
+    on: {
+      click () {
+        app.val = app.__input === bunny ? lego : bunny
+      }
+    }
   }
 })
 
-app.val = data.one
+app.val = bunny
 
-// setTimeout(function () {
-//   app.player.__input = data.two
-//   app.player.emit('data')
-//   app.player.ad.origin.set(true)
-//   app.player.ended.origin.on(function () {
-//     app.player.__input = data.one
-//     app.player.emit('data')
-//     app.player.ad.origin.set(false)
-//   })
-// }, 4000)
+setInterval(function () {
+  console.log(3)
+},1000)

@@ -1,0 +1,59 @@
+@import (reference) "~vigour-scratch/index.less";
+
+.vigour-player .seekbar {
+  .flex(1);
+  .flex-display;
+  .flex-wrap(nowrap);
+  .align-items(center);
+  margin: 0 10px;
+  cursor: pointer;
+  height: 100%;
+  > .seek {
+    width: 100%;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.5);
+
+    > .bar {
+      position: relative;
+      background-color: @tertiary;
+      height: 6px;
+      border-radius: 3px;
+      padding-left: 2px;
+      min-width: 3px;
+
+      > .button {
+        .size(10px);
+        background-color: @tertiary;
+        position: absolute;
+        top: -2px;
+        right: -5px;
+        border-radius: 5px;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.vigour-player.channel .seekbar {
+  visibility: hidden;
+}
+
+.desktop .vigour-player .seekbar:hover {
+  > .seek > .bar > .button {
+    .transition(~".4s all linear");
+    .size(16px);
+    -webkit-transform: translate3d(3px,-3px,0);
+    transform: translate3d(3px,-3px,0);
+    border-radius: 8px;
+  }
+}
+
+// disabled until we get proper css updates through cases
+// .playerReady:not(.playerLoading) .vigour-player .seekbar {
+//   &:active > .seek > .bar {
+//     .transition(none);
+//   }
+//   > .seek > .bar {
+//     .transition(~".6s width linear");
+//   }
+// }

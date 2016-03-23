@@ -1,0 +1,31 @@
+@import (reference) "~vigour-scratch/index.less";
+
+body:not(.playerFullscreen) .vigour-player {
+  .play {
+    @media all @under-tablet {
+      .transition(~".4s ease opacity, .4s ease visibility");
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      -o-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+      position: absolute;
+      top: -32vw;
+      left: 50vw;
+      font-size: @h0;
+    }
+  }
+}
+
+.playerPlaying:not(.playerFullscreen) .vigour-player> .type-controls.hidden .play {
+  @media all @under-tablet {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+
+// **TEMP** hide play button when channel is playing
+.vigour-player.channel .icon-pause-o {
+  visibility: hidden;
+}

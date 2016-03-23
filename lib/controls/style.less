@@ -1,0 +1,56 @@
+@import (reference) "~vigour-scratch/index.less";
+
+.vigour-player > .type-controls {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  z-index: 6;
+  color: white;
+  .gradient (fade(@body-background, 0%), fade(@body-background, 25%));
+  position: absolute;
+  height: 54px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .flex-display;
+  .flex-wrap(nowrap);
+  .align-items(center);
+  .transition(~".4s ease all");
+  // .transition(~".4s ease opacity, .4s ease visibility");
+
+  // TODO: need solution for phone
+  @media all @under-tablet {
+    .transition-delay(.1s);
+  }
+}
+
+.playerPlaying .vigour-player > .type-controls.hidden {
+  -webkit-transform: translate3d(0,54px,0);
+  transform: translate3d(0,54px,0);
+}
+
+.vigour-player > .type-controls .type-icon {
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 3rem;
+  &:before {
+    line-height: 60px;
+  }
+}
+
+// hide all controls except play button on ios safari
+.phone.ios.web .vigour-player > .type-controls {
+  background: none;
+  > *:not(.play) {
+    visibility: hidden;
+  }
+}
+
+// hide cursor when playing on fullscreen
+.playerPlaying.playerFullscreen:not(.playerInteraction) .vigour-player {
+  cursor: none;
+}
+
+.vigour-player.locked > .type-controls {
+  display: none;
+}
