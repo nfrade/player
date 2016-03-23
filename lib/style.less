@@ -1,41 +1,57 @@
 @import './overlay/style.less';
 
 .vigour-player-container {
-
-.vigour-player {
-  .user-select;
   position: relative;
   height: 0;
   padding-bottom: 56.6%;
   background: black;
-  overflow: hidden;
-}
-
-.vigour-player.locked {
-  &:before {
-    // .icon('\e63a');
-    .ui-position-center;
-    z-index: 99;
-    opacity: .85;
-    font-size: @h0;
-    // not included in vigour-scratch
-    // color: extract(@locked-scheme, 1);
-
-    @media all @under-tablet {
-      font-size: @h1;
-      margin-top: (-@h1 / 2)
+  > .video {
+    height: 0 !important;
+    padding-bottom: 56.6%;
+    > * {
+      position: absolute;
     }
   }
+}
 
-  &:after {
-     .fullsize;
-     content: '';
-     // not included in vigour-scratch
-     // background: fade(extract(@locked-scheme, 4), 80%);
-     z-index: 98;
-   }
+.phone .vigour-player-container {
+  > .video {
+    height: 0 !important;
+    padding-bottom: 56.6%;
+    > * {
+      height: 0 !important;
+      min-height: 0 !important;
+      padding-bottom: 56.6% !important;
+    }
+  }
+}
 
-   .loader {
-     display: none !important;
-   }
+.fullscreen({
+  height: 100%;
+  width: 100%;
+});
+
+// **TODO** add all fullscreen props (currently done in js) here
+.playerFullscreen {
+  .vigour-player-container {
+    padding-bottom: 0 !important;
+    > .video {
+      padding-bottom: 0 !important;
+      height: 100% !important;
+      > * {
+        padding-bottom: 0 !important;
+        height: 100% !important;
+      }
+    }
+  }
+  &.web.phone,
+  &:not(.phone) {
+    .vigour-player-container {
+      height: 100% !important;
+    }
+  }
+  // this makes sure nothing is cut off
+  &.phone.native * {
+    overflow: visible !important;
+  }
 }
