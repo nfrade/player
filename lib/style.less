@@ -1,20 +1,23 @@
 @import './overlay/style.less';
 
-.vigour-player-container {
+.type-player {
   position: relative;
   height: 0;
   padding-bottom: 56.6%;
   background: black;
+  overflow: hidden;
+
   > .video {
     height: 0 !important;
     padding-bottom: 56.6%;
+
     > * {
       position: absolute;
     }
   }
 }
 
-.phone .vigour-player-container {
+.phone .type-player {
   > .video {
     height: 0 !important;
     padding-bottom: 56.6%;
@@ -33,7 +36,7 @@
 
 // **TODO** add all fullscreen props (currently done in js) here
 .playerFullscreen {
-  .vigour-player-container {
+  .type-player {
     padding-bottom: 0 !important;
     > .video {
       padding-bottom: 0 !important;
@@ -44,9 +47,10 @@
       }
     }
   }
+
   &.web.phone,
   &:not(.phone) {
-    .vigour-player-container {
+    .type-player {
       height: 100% !important;
     }
   }
