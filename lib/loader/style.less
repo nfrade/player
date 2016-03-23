@@ -1,10 +1,10 @@
-@import (reference) "~vigour-scratch/index.less";
+// @import (reference) "~vigour-scratch/index.less";
 
 .vigour-player .loader {
   margin-top: -@gutter;
   display: none;
 }
 
-.vigour-player.loading .loader {
+.vigour-player.loading:not(.locked) .loader {
   display: block;
 }
