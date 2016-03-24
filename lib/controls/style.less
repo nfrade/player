@@ -4,8 +4,8 @@
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
   z-index: 6;
-  color: white;
-  .gradient (fade(@body-background, 0%), fade(@body-background, 25%));
+  color: extract(@player-scheme, 1);
+  background-color: fade(extract(@player-scheme, 4), 20%);
   position: absolute;
   height: 54px;
   bottom: 0;
@@ -15,7 +15,6 @@
   .flex-wrap(nowrap);
   .align-items(center);
   .transition(~".4s ease all");
-  // .transition(~".4s ease opacity, .4s ease visibility");
 
   // TODO: need solution for phone
   @media all @under-tablet {
