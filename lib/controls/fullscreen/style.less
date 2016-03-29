@@ -1,0 +1,46 @@
+.fullscreen({
+  height: 100%;
+  width: 100%;
+});
+
+.playerFullscreen {
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+
+  .type-switcher > div {
+    overflow: hidden;
+    -webkit-overflow-scrolling: auto;
+  }
+
+  // **TODO** add all fullscreen props (currently done in js) here
+  .vigour-player {
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 0 !important;
+
+    > .video {
+      padding-bottom: 0 !important;
+      height: 100% !important;
+
+      > * {
+        padding-bottom: 0 !important;
+        height: 100% !important;
+      }
+    }
+  }
+
+  .type-player {
+    padding-bottom: 0 !important;
+
+    > .video {
+      padding-bottom: 0 !important;
+      height: 100% !important;
+
+      > * {
+        padding-bottom: 0 !important;
+        height: 100% !important;
+      }
+    }
+  }
+}
