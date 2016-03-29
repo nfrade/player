@@ -19,7 +19,8 @@ var Data = new Observable({
 var bunny = new Data({
   key: 'bunny-video-data',
   img: 'https://www.filmfestival.nl/FionaAssets/000001/00000136/scaled/13667.jpg',
-  video: 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4'
+  video: 'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4',
+  progress: 0.9
 })
 
 var lego = new Data({
